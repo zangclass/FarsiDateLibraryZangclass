@@ -9,9 +9,9 @@ namespace FarsiDateLibraryZangclass
 {
     public static class FarsiDateZangclass
     {
-        public static string Year { get; set; }
-        public static string Month { get; set; }
-        public static string Day { get; set; }
+        public static int Year { get; set; }
+        public static int Month { get; set; }
+        public static int Day { get; set; }
         public static bool Kabiseh { get; set; }
         /// <summary>
         /// تاریخ شمسی همان لحظه در سیستم را به شما باز میگرداند
@@ -68,6 +68,65 @@ namespace FarsiDateLibraryZangclass
                 Kabiseh = false;
             }
             return Kabiseh;
+        }
+
+        /// <summary>
+        /// اسم ماه را به این تابع میدهیم و تاریخ را برای اول ماه تنظیم میکنه
+        /// </summary>
+        /// <param name="month">ورودی اینامی از اسم ماه</param>
+        public static void SelectFirstDayMonth(MonthFarsi month)
+        {
+            switch (month)
+            {
+                case MonthFarsi.Farvardin:
+                    Month = 1;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Ordibehesht:
+                    Month = 2;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Khordad:
+                    Month = 3;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Tir:
+                    Month = 4;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Mordad:
+                    Month = 5;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Shahrivar:
+                    Month = 6;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Mehr:
+                    Month = 7;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Aban:
+                    Month = 8;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Azar:
+                    Month = 9;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Dey:
+                    Month = 10;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Bahman:
+                    Month = 11;
+                    Day = 1;
+                    break;
+                case MonthFarsi.Esfand:
+                    Month = 12;
+                    Day = 1;
+                    break;
+            }
         }
     }
 
