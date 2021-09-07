@@ -45,6 +45,7 @@
     <Compile Include="EnglishDay.cs" />
     <Compile Include="FarsiDateZangclass.cs" />
     <Compile Include="FarsiDay.cs" />
+    <Compile Include="MonthFarsi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
