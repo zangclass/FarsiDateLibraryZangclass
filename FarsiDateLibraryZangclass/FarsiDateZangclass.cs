@@ -44,7 +44,7 @@ namespace FarsiDateLibraryZangclass
         /// <param name="month">ماه ورودی</param>
         /// <param name="day">روز ورودی</param>
         /// <returns>خروجی ماه میلادی به صورت رشته می باشد</returns>
-        public static string ConvertDateTo(int yaer,int month,int day)
+        public static string ConvertDateTo(int yaer, int month, int day)
         {
             PersianCalendar p = new PersianCalendar();
             string str = Convert.ToString(p.ToDateTime(yaer, month, day, 0, 0, 0, 0), CultureInfo.InvariantCulture);
@@ -56,7 +56,7 @@ namespace FarsiDateLibraryZangclass
         /// </summary>
         /// <param name="yaer">سال ورودی</param>
         /// <returns>خروجی بولین است و اگر مقدار true باشد یعنی سال کبیسه میباشد.</returns>
-        public static bool CalcKabiseh(int yaer)  
+        public static bool CalcKabiseh(int yaer)
         {
             int j = yaer % 33;
             if (j == 1 || j == 5 || j == 9 || j == 13 || j == 17 || j == 22 || j == 26 || j == 30)
@@ -128,6 +128,65 @@ namespace FarsiDateLibraryZangclass
                     break;
             }
         }
-    }
+        /// <summary>
+        /// اسم ماه را به این تابع میدهیم و تاریخ را برای اول ماه تنظیم میکنه
+        /// </summary>
+        /// <param name="month">ورودی اینامی از اسم ماه</param>
+        public static void SelectLastDayMonth(MonthFarsi month)
+        {
+            switch (month)
+            {
+                case MonthFarsi.Farvardin:
+                    Month = 1;
+                    Day = 31;
+                    break;
+                case MonthFarsi.Ordibehesht:
+                    Month = 2;
+                    Day = 31;
+                    break;
+                case MonthFarsi.Khordad:
+                    Month = 3;
+                    Day = 31;
+                    break;
+                case MonthFarsi.Tir:
+                    Month = 4;
+                    Day = 31;
+                    break;
+                case MonthFarsi.Mordad:
+                    Month = 5;
+                    Day = 31;
+                    break;
+                case MonthFarsi.Shahrivar:
+                    Month = 6;
+                    Day = 31;
+                    break;
+                case MonthFarsi.Mehr:
+                    Month = 7;
+                    Day = 30;
+                    break;
+                case MonthFarsi.Aban:
+                    Month = 8;
+                    Day = 30;
+                    break;
+                case MonthFarsi.Azar:
+                    Month = 9;
+                    Day = 30;
+                    break;
+                case MonthFarsi.Dey:
+                    Month = 10;
+                    Day = 30;
+                    break;
+                case MonthFarsi.Bahman:
+                    Month = 11;
+                    Day = 30;
+                    break;
+                case MonthFarsi.Esfand:
+                    Month = 12;
+                    Day = Kabiseh == true ? 30 : 29;
+                    break;
+            }
 
+        }
+
+    }
 }
